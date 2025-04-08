@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="f1986638-18c3-4aa1-a488-81469048bbaa" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="myfirstproject" doc:id="7585a639-f1a9-418a-b6ec-e4c5c00c6e18" >
+		<http:listener doc:name="Listener" doc:id="7abc01b6-27ce-4b70-86a1-b5178c0df443" config-ref="HTTP_Listener_config" path="/demo1"/>
+		<set-payload value='#["Flight info"]' doc:name="Set Payload" doc:id="0dffe5aa-4eae-40bb-a87c-843d87d57c8b" />
+	</flow>
+</mule>
